@@ -23,9 +23,9 @@ func main() {
 	// 定义命令行参数
 	url := pflag.StringP("url", "u", "", "URL to send the HTTP/2 request. eg: -u https://localhost/index")
 	method := pflag.StringP("method", "X", "GET", "HTTP method (GET, POST, etc.). eg: -X POST")
-	headers := pflag.StringArrayP("header", "H", []string{}, "HTTP headers in key:value format")
+	headers := pflag.StringArrayP("header", "H", []string{}, "HTTP headers in key:value format. eg: -H 'Content-Type: application/json','Accept: */*'")
 	//
-	data := pflag.StringP("data", "d", "", "Data to include in the request body.JSON and YAML formats are accepted.")
+	data := pflag.StringP("data", "d", "", "Data to include in the request body.JSON and YAML formats are accepted. eg: -d '{\"foo\": \"bar\"}' OR -d @data.yml OR -d @data.yml")
 
 	// 解析命令行参数
 	pflag.Parse()
